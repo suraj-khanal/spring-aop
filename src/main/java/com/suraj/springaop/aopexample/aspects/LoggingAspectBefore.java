@@ -33,7 +33,7 @@ public class LoggingAspectBefore {
 		
 	}
 	
-	@Before("execution(* com.suraj.springaop.aopexample.*.*.*(..))") //WHEN
+	@Before("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()") //WHEN
 	public void logMethodCall3(JoinPoint joinPoint) {
 		
 		logger.info("Before Aspect - Method is Called - {}", joinPoint); //WHAT

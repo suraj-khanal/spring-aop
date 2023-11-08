@@ -17,7 +17,8 @@ public class LoggingAspectAfter {
 
 	/* 
 	 * @After executes irrespective whether method is successful or throws exception
-	 *  @AfterThrowing only executes if the method throws an exception
+	 * @AfterThrowing only executes if the method throws an exception
+	 * @AfterReturning only executes if the method executes successfully
 	 * */
 	
 	

@@ -1,12 +1,13 @@
 package com.suraj.springaop;
 
-import org.slf4j.Logger;
+import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.suraj.springaop.aopexample.business.BusinessService1;
+import com.suraj.springaop.aopexample.business.BusinessService2;
 
 
 @SpringBootApplication
@@ -16,8 +17,11 @@ public class SpringAopApplication implements CommandLineRunner {
 	
 	private BusinessService1 businessService1;
 	
-	public SpringAopApplication(BusinessService1 businessService1) {		
+	private BusinessService2 businessService2;
+	
+	public SpringAopApplication(BusinessService1 businessService1, BusinessService2 businessService2) {		
 		this.businessService1 = businessService1;
+		this.businessService2 = businessService2;
 	}
 	
 	
@@ -29,6 +33,8 @@ public class SpringAopApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		logger.info("Value returned is {}", businessService1.calculateMax());	
+		
+		logger.info("Value returned is {}", businessService2.calculateMin());
 		
 	}
 
