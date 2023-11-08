@@ -24,7 +24,7 @@ public class LoggingAspectAfter {
 	
 	//Pointcut - When?
 	// execution(* PACKAGE.*.*(..))
-	@After("execution(* com.suraj.springaop.aopexample.*.*.*(..))")
+	@After("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
 	public void logMethodCallAfterExecution(JoinPoint joinPoint) {
 		
 		logger.info("After Aspect - {} has executed", joinPoint);
@@ -35,7 +35,7 @@ public class LoggingAspectAfter {
 	}
 	
 	@AfterThrowing(
-		pointcut = "execution(* com.suraj.springaop.aopexample.*.*.*(..))",
+		pointcut = "com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
 		throwing = "exception")
 	public void logMethodCallAfterThrowingException(JoinPoint joinPoint, Exception exception) {
 		
@@ -44,7 +44,7 @@ public class LoggingAspectAfter {
 	}
 	
 	@AfterReturning(
-		pointcut = "execution(* com.suraj.springaop.aopexample.*.*.*(..))",
+		pointcut = "com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
 		returning = "resultValue")
 	public void logMethodCallAfterSuccessfulExecution(JoinPoint joinPoint, Object resultValue) {
 		

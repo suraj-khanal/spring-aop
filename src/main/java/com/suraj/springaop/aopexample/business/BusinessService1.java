@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
+import com.suraj.springaop.aopexample.annotations.TrackTime;
 import com.suraj.springaop.aopexample.data.DataService1;
 
 @Service
@@ -16,6 +17,8 @@ public class BusinessService1 {
 	}
 	
 	// Business Logic
+	//-- @TrackTime is custom Bean applied at Method Level during Runtime
+	@TrackTime  
 	public int calculateMax() {
 		
 		int [] data = dataService1.retrieveData();

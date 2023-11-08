@@ -16,6 +16,7 @@ public class BusinessService2 {
 	}
 	
 	// Business Logic
+	
 	public int calculateMin() {
 		
 		int [] data = dataService2.retrieveData();

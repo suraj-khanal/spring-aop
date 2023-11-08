@@ -15,7 +15,7 @@ public class LoggingAspectBefore {
 	
 	//Pointcut - When?
 	// execution(* PACKAGE.*.*(..))
-	@Before("execution(* com.suraj.springaop.aopexample.business.*.*(..))")
+	@Before("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessPackageConfig()")
 	public void logMethodCall1(JoinPoint joinPoint) {
 		
 		logger.info("Before Aspect -{} Method is Called with arguments: {}", joinPoint, joinPoint.getArgs());
@@ -23,7 +23,7 @@ public class LoggingAspectBefore {
 		//Before Aspect - Method is Called - execution
 		//(int com.suraj.springaop.aopexample.business.BusinessService1.calculateMax())
 	}
-	@Before("execution(* com.suraj.springaop.aopexample.data.*.*(..))")
+	@Before("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.dataPackageConfig()")
 	public void logMethodCall2(JoinPoint joinPoint) {
 		
 		logger.info("Before Aspect - Method is Called - {}", joinPoint);
@@ -33,7 +33,7 @@ public class LoggingAspectBefore {
 		
 	}
 	
-	@Before("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()") //WHEN
+	@Before("com.suraj.springaop.aopexample.aspects.CommonPointcutConfig.allPackageConfigUsingBean()") //WHEN
 	public void logMethodCall3(JoinPoint joinPoint) {
 		
 		logger.info("Before Aspect - Method is Called - {}", joinPoint); //WHAT
